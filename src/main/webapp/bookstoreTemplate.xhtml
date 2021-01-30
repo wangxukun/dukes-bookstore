@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: wangxukun
+  Date: 2021/1/30
+  Time: 0:20
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="#{localBean.lanaguage}"
+        xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <h:outputStylesheet library="css" name="stylesheet.css"/>
+    <title>#{bundle.BookstoreTitle}</title>
+</h:head>
+
+<h:body>
+    <div id="top" class="top" align="center" style="background-color: white;">
+        <h1>
+            Duke's
+            <h:graphicImage library="images" name="duke.books.gif" alt="Duke holding books" />
+            Bookstore
+        </h1>
+        <ui:insert name="top" />
+    </div>
+
+    <div id="content" class="center-content">
+        <ui:insert name="content" />
+    </div>
+</h:body>
+
+</html>
