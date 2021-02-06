@@ -5,6 +5,11 @@ import org.xkidea.dukesbookstore.listeners.AreaSelectedEvent;
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UICommand;
 
+/**
+ * MapComponent是与客户端图像映射相对应的JavaServer Faces组件。 它可以具有AreaComponent类型的多个子元素之一，每个子元素代表热点，用户可以单击它们并将其悬停在上面。
+ * 此组件是AreaSelectedEvent事件的来源，每当更改当前区域时都会触发该事件。
+ * 使用javax.faces.component.StateHelper接口可以使用表达式，也无需实现saveState（）和restoreState（）。
+ */
 @FacesComponent("DemoMap")
 public class MapComponent extends UICommand {
 
