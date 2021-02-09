@@ -4,6 +4,7 @@ import org.xkidea.dukesbookstore.components.MapComponent;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.context.ResponseWriter;
 import javax.faces.render.FacesRenderer;
 import javax.faces.render.Renderer;
 import java.io.IOException;
@@ -28,6 +29,11 @@ public class MapRenderer extends Renderer {
         MapComponent map = (MapComponent) component;
 
         String key = getName(context, map);
+        String value = (String)context.getExternalContext().getRequestParameterMap().get(key);
+
+        if (value != null) {
+            map.setCurrent(value);
+        }
     }
 
     private String getName(FacesContext context, UIComponent component) {
@@ -36,16 +42,45 @@ public class MapRenderer extends Renderer {
 
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
-        super.encodeBegin(context, component);
+        if ((context == null) || (component == null)) {
+            throw new NullPointerException();
+        }
+
+        MapComponent map = (MapComponent) component;
+        ResponseWriter writer = context.getResponseWriter();
+
+        writer.startElement("map",map);
+        writer.writeAttribute("name", map.getId(),"id");
     }
 
     @Override
     public void encodeChildren(FacesContext context, UIComponent component) throws IOException {
-        super.encodeChildren(context, component);
+        if ((context == null) || (component == null)) {
+            throw new NullPointerException();
+        }
     }
 
     @Override
     public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
-        super.encodeEnd(context, component);
+        if ((context == null) || (component == null)) {
+            throw new NullPointerException();
+        }
+
+        MapComponent map = (MapComponent) component;
+        ResponseWriter writer = context.getResponseWriter();
+
+        writer.startElement("input",map);
+        writer.writeAttribute("type","hidden",null);
+        writer.writeAttribute("name",getName(context,map),"clientId");
+        writer.endElement("map");
+    }
+
+    private String getURI(FacesContext context) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(context.getExternalContext().getRequestContextPath());
+        sb.append("/faces");
+        sb.append(context.getViewRoot().getViewId());
+
+        return (sb.toString());
     }
 }
