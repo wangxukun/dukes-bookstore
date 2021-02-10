@@ -13,6 +13,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:bookstore="http://bookstore"
       template="./bookstoreTemplate.xhtml">
     <ui:define name="top"></ui:define>
     <ui:define name="content">
@@ -26,6 +27,11 @@
                                 name="book_all.jpg"
                                 alt="#{bundle.ChooseBook}"
                                 usemap="#bookMap" />
+                <bookstore:map id="bookMap"
+                               current="map1"
+                                immediate="true">
+
+                </bookstore:map>
             </h:panelGrid>
         </h:form>
     </ui:define>

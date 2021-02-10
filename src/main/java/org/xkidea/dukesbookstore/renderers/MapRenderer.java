@@ -72,6 +72,7 @@ public class MapRenderer extends Renderer {
         writer.startElement("input",map);
         writer.writeAttribute("type","hidden",null);
         writer.writeAttribute("name",getName(context,map),"clientId");
+        writer.endElement("input");
         writer.endElement("map");
     }
 
