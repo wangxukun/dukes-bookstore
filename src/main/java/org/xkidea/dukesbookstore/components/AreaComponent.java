@@ -5,9 +5,11 @@ import org.xkidea.dukesbookstore.model.ImageArea;
 import javax.faces.component.FacesComponent;
 import javax.faces.component.UIOutput;
 
-@FacesComponent("DemoArea")
+@FacesComponent(AreaComponent.COMPONENT_TYPE)
 public class AreaComponent extends UIOutput {
 
+    public static final String COMPONENT_TYPE = "DemoArea";
+    public static final String COMPONENT_FAMILY = "Area";
     private enum PropertyKeys {
         alt, coords, shape, targetImage;
     }
@@ -46,7 +48,7 @@ public class AreaComponent extends UIOutput {
 
     @Override
     public String getFamily() {
-        return ("Area");
+        return AreaComponent.COMPONENT_FAMILY;
     }
 
     @Override

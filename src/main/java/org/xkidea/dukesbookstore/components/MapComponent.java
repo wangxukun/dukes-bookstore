@@ -10,9 +10,13 @@ import javax.faces.component.UICommand;
  * 此组件是AreaSelectedEvent事件的来源，每当更改当前区域时都会触发该事件。
  * 使用javax.faces.component.StateHelper接口可以使用表达式，也无需实现saveState（）和restoreState（）。
  */
-@FacesComponent("DemoMap")
+
+// 注册组件
+@FacesComponent(MapComponent.COMPONENT_TYPE)
 public class MapComponent extends UICommand {
 
+    public static final String COMPONENT_TYPE = "DemoMap";
+    public static final String COMPONENT_FAMILY = "Map";
     // 声明枚举类型变量PropertyKeys
     private enum PropertyKeys {
         current;
@@ -59,6 +63,6 @@ public class MapComponent extends UICommand {
      */
     @Override
     public String getFamily() {
-        return ("Map");
+        return (MapComponent.COMPONENT_FAMILY);
     }
 }
