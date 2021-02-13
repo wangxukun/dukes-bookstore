@@ -9,8 +9,10 @@ import javax.faces.render.FacesRenderer;
 import javax.faces.render.Renderer;
 import java.io.IOException;
 
-@FacesRenderer(componentFamily = "Map",rendererType = "DemoMap")
+@FacesRenderer(componentFamily = MapComponent.COMPONENT_FAMILY,rendererType = MapRenderer.RENDERER_TYPE)
 public class MapRenderer extends Renderer {
+
+    public static final String RENDERER_TYPE= "DemoMap";
 
     public MapRenderer() {
     }

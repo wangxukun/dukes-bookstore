@@ -12,5 +12,12 @@
             <renderer-type>DemoMap</renderer-type>
         </component>
     </tag>
+    <tag>
+        <tag-name>area</tag-name>
+        <component>
+            <component-type>DemoArea</component-type>
+            <renderer-type>DemoArea</renderer-type>
+        </component>
+    </tag>
 
 </facelet-taglib>

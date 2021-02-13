@@ -35,7 +35,7 @@ public class LocalBean extends AbstractBean implements Serializable {
         this.locale = locale;
     }
 
-    public String getLanaguage() {
+    public String getLanguage() {
         Locale newlocale = null;
         logger.log(Level.INFO, "Entering LocaleBean.getLanguage");
         String lang = locale.getLanguage();
