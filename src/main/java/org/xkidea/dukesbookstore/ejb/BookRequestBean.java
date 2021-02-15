@@ -29,6 +29,7 @@ public class BookRequestBean {
                     onsale, calendarYear, description, inventory);
             logger.log(Level.INFO, "Create book {0}", bookId);
             em.persist(book);
+            logger.log(Level.INFO,"Persisted book {0}", bookId);
         } catch (Exception exception) {
             throw new EJBException(exception.getMessage());
         }
@@ -38,9 +39,7 @@ public class BookRequestBean {
         try {
             return (List<Book>) em.createNamedQuery("findBooks").getResultList();
         } catch (Exception ex) {
-            throw  new BooksNotFoundException(
-                    "Could not get books: " + ex.getMessage()
-            );
+            throw  new BooksNotFoundException("Could not get books: " + ex.getMessage());
         }
     }
 

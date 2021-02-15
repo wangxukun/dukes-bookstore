@@ -22,7 +22,7 @@ public class MapBookChangeListener implements ActionListener {
         String book2 = books.put("Jeeves", "202");
         String book3 = books.put("Masterson", "203");
         String book4 = books.put("Novation", "205");
-        String book5 = books.put("Thrilled", "205");
+        String book5 = books.put("Thrilled", "206");
         String book6 = books.put("Coding", "207");
     }
 

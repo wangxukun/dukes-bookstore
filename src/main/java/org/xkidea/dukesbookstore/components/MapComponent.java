@@ -31,7 +31,10 @@ public class MapComponent extends UICommand {
      * @return 当前所选子AreaComponent的备用文本标签
      */
     public String getCurrent() {
-        return (String) getStateHelper().eval(PropertyKeys.current, null);
+        String cur = (String) getStateHelper().eval(PropertyKeys.current, null);
+        // TODO ---getCurrent()---
+        System.out.println("----getCurrent()--- is :" + cur);
+        return cur;
     }
 
     /**

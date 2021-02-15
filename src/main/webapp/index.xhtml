@@ -32,6 +32,7 @@
                                current="map1"
                                immediate="true"
                                action="bookstore">
+                    <f:actionListener type="org.xkidea.dukesbookstore.listeners.MapBookChangeListener" />
                     <bookstore:area id="map1" value="#{Book201}"
                                     onmouseover="resources/images/book_201.jpg"
                                     onmouseout="resources/images/book_all.jpg"
@@ -59,7 +60,6 @@
                 </bookstore:map>
             </h:panelGrid>
         </h:form>
-        <!--
         <h:form>
             <table id="links" columns="3" width="800" role="presentation">
                 <tr>
@@ -104,6 +104,5 @@
                 </tr>
             </table>
         </h:form>
-        -->
     </ui:define>
 </ui:composition>

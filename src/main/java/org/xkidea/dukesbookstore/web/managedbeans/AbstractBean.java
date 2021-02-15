@@ -3,6 +3,7 @@ package org.xkidea.dukesbookstore.web.managedbeans;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.text.MessageFormat;
@@ -15,8 +16,9 @@ import java.util.ResourceBundle;
 @SessionScoped
 public class AbstractBean implements Serializable {
 
-    private static final long serialVersionUID = -1L;
-
+    private static final long serialVersionUID = 5786648996320514448L;
+    @Inject
+    ShoppingCart cart;
     /**
      * @return 当前请求的FacesContext实例。
      */
