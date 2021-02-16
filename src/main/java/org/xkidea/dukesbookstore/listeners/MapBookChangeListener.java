@@ -32,6 +32,7 @@ public class MapBookChangeListener implements ActionListener {
         String current = event.getMapComponent().getCurrent();
         FacesContext context = FacesContext.getCurrentInstance();
         String bookId = books.get(current);
+        // TODO MapBookChangeListener()-processAction()：把被选择的书的bookId设置到会话session中
         context.getExternalContext().getSessionMap().put("bookId", bookId);
     }
 }

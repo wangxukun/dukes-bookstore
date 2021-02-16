@@ -57,6 +57,7 @@ public class MapComponent extends UICommand {
         } else if ((previous != null) && (current != null) && (previous.equals(current))) {
             // do nothing
         } else {
+            // TODO MapComponent()-setCurrent()：把AreaSelectedEvent事件放入队列中，并在bookstore:map标记下添加MapBookChangeListener监听器
             this.queueEvent(new AreaSelectedEvent(this));
         }
     }

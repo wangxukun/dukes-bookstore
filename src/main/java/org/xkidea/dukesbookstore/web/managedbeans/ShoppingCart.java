@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Named("cart")
@@ -81,5 +82,19 @@ public class ShoppingCart extends AbstractBean implements Serializable {
         return val / 100.0;
     }
 
+    public synchronized void clear() {
+        logger.log(Level.INFO,"Clearing cart.");
+        items.clear();
+        numberOfItems = 0;
+        message(null,"CartCleared");
+    }
 
+    public String buy(){
+        if (getNumberOfItems() < 1) {
+            message(null,"CartEmpty");
+            return null;
+        } else {
+            return "bookcashier";
+        }
+    }
 }

@@ -68,6 +68,7 @@ public class AreaRenderer extends Renderer {
         sb = new StringBuilder("document.forms[0]['");
         sb.append(getName(context, area));
         sb.append("'].value='");
+        // TODO AreaRenderer()-encode()：设置input的value
         sb.append(iarea.getAlt());
         sb.append("'; document.forms[0].submit()");
         writer.writeAttribute("onclick", sb.toString(), "value");
@@ -77,6 +78,8 @@ public class AreaRenderer extends Renderer {
     private String getName(FacesContext context, UIComponent component) {
         while (component != null) {
             if (component instanceof MapComponent) {
+                // TODO AreaRenderer component.getId = component.getParent()
+                System.out.println("--- AreaRenderer component.getId() = " + component.getId());
                 return (component.getId() + "_current");
             }
 

@@ -31,7 +31,7 @@ public class MapRenderer extends Renderer {
         MapComponent map = (MapComponent) component;
 
         String key = getName(context, map);
-        // TODO MapRenderer()-decode()
+        // TODO MapRenderer()-decode()：取得input的value，并设置MapComponent()-setCurrent(value)
         // value是name为bookMap_current的input(type="hidden")组件的值
         String value = (String)context.getExternalContext().getRequestParameterMap().get(key);
         System.out.println("--- MapRenderer --- decode() value : " + value);
