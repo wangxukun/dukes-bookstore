@@ -74,6 +74,7 @@
                     </f:facet>
                     <h:commandLink action="#{catalog.details}"
                                    value="#{book.title}">
+                        <!-- // TODO setPropertyActionListener target="#{requestScope.book}" value="#{book} -->
                         <f:setPropertyActionListener target="#{requestScope.book}"
                                                      value="#{book}"/>
                     </h:commandLink>

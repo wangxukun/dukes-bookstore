@@ -30,6 +30,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
         Book book = book();
         cart.add(book.getBookId(),book);
         message(null,"ConfirmAdd", new Object[]{book.getTitle()});
+        System.out.println("--- addToCart -- book = " + book);
         return "bookcatalog";
     }
 
@@ -56,6 +57,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
         Book book = book();
 
         if (book == null) {
+            System.out.println("--- getBookQuantity() book=null -> quantity = " + bookQuantity);
             return bookQuantity;
         }
 
@@ -69,6 +71,7 @@ public class CatalogBean extends AbstractBean implements Serializable {
                 break;
             }
         }
+        System.out.println("--- getBookQuantity() book<>null -> quantity = " + bookQuantity);
         return bookQuantity;
     }
 }
